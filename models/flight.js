@@ -2,6 +2,17 @@ var mongoose = require('mongoose');
  // optional shortcut to the mongoose.Schema class
 var Schema = mongoose.Schema;
 
+var destinationSchema = new Schema({
+    airport: {
+        type: String,
+        enum: ['AUS', 'DAL', 'LAX', 'SEA']
+    },
+    arrival: {
+        type: Date
+    }
+})
+
+
 var flightSchema = new Schema({
     airline: {
         type: String,
@@ -14,12 +25,13 @@ var flightSchema = new Schema({
     },
     departs: {
         type: Date,
-        default: deleteOneYear()
     },
+    airport: {
+        type: String,
+        enum: ['AUS', 'DAL', 'LAX', 'SEA'],
+        default: 'SEA'
+    },
+    destinations: [destinationSchema]
 });
-
-function deleteOneYear(){
-    
-}
 
 module.exports = mongoose.model('Flight', flightSchema)

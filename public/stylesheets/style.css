@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+table {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 10px;
+}
