@@ -11,7 +11,7 @@
     <h1>Details</h1>
     <section id="show-page">
             <div>Airline: </div>
-            <div><%= flight.title %></div>
+            <div><%= flight.airline %></div>
             <div>Flight Number: </div>
             <div><%= flight.flightNo %></div>
             <div>Depart Time: </div>
@@ -35,25 +35,3 @@
     </form>
 </body>
 </html>
-
-<% if (flight.reviews.length) { %>
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Aiport</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% flight.reviews.forEach(function(i) { %>
-          <tr>
-            <td><%= i.createdAt.toLocaleDateString() %></td>
-            <td><%= i.airport %></td>
-          </tr>
-        <% }); %>
-      </tbody>
-    </table>
-  <% } else { %>
-    <h5>No Arrival Information Yet</h5>
-  <% } %>
-  
