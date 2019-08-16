@@ -24,4 +24,9 @@
     </select>
     <input type="submit" value="Add Arrival Information">
     </form>
+    <h2>Arrival Information:</h2>
+    <% flight.destinations.forEach(function(f) { %>
+      <div>Arrival Time:<%= f.arrival %></div>
+      <div>Airport:<%= f.airport %></div>
+    <% }); %>
 <%- include('../partials/footer') %>
