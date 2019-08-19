@@ -19,3 +19,8 @@ th, td {
 .info {
   font-weight: bold;
 }
+
+nav {
+  text-align: right;
+  border: 20px;
+}
