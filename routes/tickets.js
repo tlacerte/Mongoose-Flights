@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var ticketCTRL = require('../controllers/tickets');
+var ticketCtrl = require('../controllers/tickets');
 
-router.get('/:id/new/',ticketCTRL.new);
-router.post('/',ticketCTRL.create);
+router.get('tickets/:id/new/', ticketCtrl.new);
+router.post('/flights/:id/details', ticketCtrl.create);
 
 module.exports = router;

@@ -6,7 +6,7 @@ module.exports = {
 };
 
 function newTicket(req, res) {
-  res.render('tickets/new')
+  res.render('tickets/${ticket._id}/new')
 }
 
 function create(req, res) {
@@ -14,6 +14,6 @@ function create(req, res) {
   ticket.save(function(err) {
     if(err)return res.redirect(`/tickets/${ticket.flight}/new`);
     console.log(ticket);
-    res.redirect(`/flights/${ticket.flight}`);
+    res.redirect(`/flights/${flight._id}`);
 });
 }
