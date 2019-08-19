@@ -6,7 +6,7 @@ module.exports = {
 };
 
 function newTicket(req, res) {
-  res.render('tickets/new',{ req.params.id })
+  res.render('tickets/new')
 }
 
 function create(req, res) {
